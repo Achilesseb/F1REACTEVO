@@ -1,0 +1,194 @@
+:root {
+  --default-color: #15151e;
+  --redbullracing-color: #3671c6;
+  --ferrari-color: #f91536;
+  --mercedes-color: #6cd3bf;
+  --mclaren-color: #f58020;
+  --alpine-color: #2293d1;
+  --alfaromeo-color: #c92d4b;
+  --haasf1team-color: #b6babd;
+  --astonmartin-color: #358c75;
+  --williams-color: #37bedd;
+  --alphatauri-color: #5e8faa;
+}
+@font-face {
+  font-family: F1Bold;
+  src: url(../../Fonts/Formula1-Bold_web_0.ttf);
+}
+@font-face {
+  font-family: F1Regular;
+  src: url(../../Fonts/Formula1-Regular_web_0.ttf);
+}
+@font-face {
+  font-family: F1Wide;
+  src: url(../../Fonts/Formula1-Wide_web_0.ttf);
+}
+.driverCard {
+  height: auto;
+  max-width: 20vw;
+  width: 100%;
+  padding: 10px 10px 0vh 10px;
+  margin: 2px;
+  margin-top: 20px;
+  border-top: 5px solid #15151e;
+  border-right: 3px solid #15151e;
+  border-top-right-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+.driverCard:hover {
+  margin-top: 10px;
+  padding-top: 20px;
+}
+.driverInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.2em;
+  line-height: 25px;
+  letter-spacing: 0.2px;
+  font-family: "F1Wide";
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #949498;
+  align-content: center;
+}
+.driverInfo > .points > .label {
+  color: #fff;
+  background-color: #000;
+  margin: 0 0 0 auto;
+  padding: 2px 10px 0;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+.driverInfo:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  align-items: center;
+}
+.driverInfo .rank {
+  font-size: 1.5em;
+  font-family: "F1Bold";
+}
+.driverInfo .points {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  right: 20px;
+}
+.driverInfo .name {
+  font-size: 0.5em;
+  font-family: "F1Regular";
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  letter-spacing: 3px;
+  position: relative;
+}
+.driverInfo .name > span:first-child {
+  font-size: 15px;
+  font-weight: 400;
+}
+.driverInfo .name > span:nth-child(2) {
+  font-size: 20px;
+  font-family: "F1Bold";
+}
+.color {
+  display: block;
+  content: "";
+  width: 8px;
+  position: absolute;
+  bottom: 0;
+  top: 2px;
+  height: 100%;
+  left: -20px;
+}
+.driverInfo.team {
+  color: #67676d;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-family: "F1Regular";
+  border: none;
+}
+.driverImage {
+  height: 200px;
+}
+.driverLook {
+  width: 100%;
+  background-image: url(../../plus-x1.png);
+  z-index: 0;
+  position: relative;
+}
+@media only screen and (max-width: 750px) {
+  .driverCard {
+    min-width: 70vw;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1400px) and (min-width: 750px) {
+  .driverCard {
+    max-width: 40vw;
+    width: 100%;
+    /* height: 40vh; */
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .driverCard:first-child,
+  .driverCard:nth-child(2),
+  .driverCard:nth-child(3) {
+    max-width: 25vw;
+    width: 100%;
+  }
+  .driverCard:first-child .driverImage,
+  .driverCard:nth-child(2) .driverImage,
+  .driverCard:nth-child(3) .driverImage {
+    height: 25vh;
+  }
+}
+
+.nationality {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+.permanentNumber {
+  position: absolute;
+  font-family: "F1Wide";
+  font-size: 1.3em;
+  bottom: 0;
+  padding: 0px 10px 5px;
+}
+.buttons-container {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: inherit;
+  align-self: center;
+  justify-content: center;
+  right: 0px;
+}
+.button.increase {
+  background-color: red;
+  color: white;
+  order: -1;
+}
+.button.increase::after {
+  content: "+";
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.button.decrease::after {
+  content: "-";
+  font-weight: 600;
+  font-size: 1.5em;
+}
+.button {
+  cursor: pointer;
+  border-radius: 5px;
+}
