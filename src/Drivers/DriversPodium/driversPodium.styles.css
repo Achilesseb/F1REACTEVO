@@ -1,0 +1,106 @@
+.podium.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 5px groove;
+  border-right: 5px groove;
+  /* padding-right: 20px; */
+  align-items: center;
+  width: inherit;
+  border-radius: 5px;
+  box-shadow: 0px 10px 13px -7px #000000,
+    inset -4px -9px 20px 8px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+.podium.container:hover {
+  transform: scale(1.05);
+}
+.podium.container:first-of-type {
+  height: 70vh;
+  width: 30%;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.podium.container:first-of-type > .rankPosition {
+  /* font-size: 5em; */
+}
+.podium.container:nth-child(2) {
+  width: 50%;
+}
+.podium.container:nth-child(3) {
+  width: 50%;
+}
+.look {
+  width: 100%;
+  align-self: flex-end;
+}
+.image {
+  height: auto;
+  width: 50%;
+  align-self: flex-end;
+}
+.driversTeamColor {
+  height: 15vh;
+}
+.name {
+  font-size: 1.5em;
+  font-family: "F1Regular";
+  display: flex;
+  justify-content: center;
+  letter-spacing: 5px;
+  height: 100%;
+  align-items: center;
+  word-wrap: break-word;
+  opacity: 0.8;
+}
+.rankPosition {
+  margin-left: 10px;
+  width: 10vw;
+  font-size: 4em;
+  align-items: center;
+}
+.rankPosition::before {
+  content: "\010916";
+  font-family: "F1Wide";
+  font-weight: 800;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+.team {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 0.9em;
+}
+.team > .image {
+  width: 90%;
+  align-self: center;
+}
+.team.name {
+  font-family: "F1Wide";
+  letter-spacing: 0px;
+  opacity: 0.8;
+}
+@media only screen and (max-width: 800px) {
+  .podium.container:first-of-type {
+    width: 90%;
+    height: 20vh;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .podium.container:nth-child(2) {
+    width: 80%;
+  }
+  .podium.container:nth-child(3) {
+    width: 70%;
+  }
+}

@@ -2,13 +2,7 @@ import React from "react";
 import "./driversCardLayout.styles.css";
 import { useState } from "react";
 import { useEffect } from "react";
-const DriverCard = ({
-  data,
-  id,
-  setDriverId,
-  setDriverNewScore,
-  handleClick,
-}) => {
+const DriverCard = ({ data, id, handleClick }) => {
   const driverData = data;
   const driverRank = id + 1;
   const [border, setBorderColor] = useState(false);
