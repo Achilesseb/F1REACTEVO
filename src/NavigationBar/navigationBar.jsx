@@ -1,34 +1,41 @@
 import React, { useState } from "react";
 import "./navigationBar.style.css";
 import logo from "./logo.png";
+import { Link } from "react-router-dom";
 
 const NavigationBar = ({
   handleNavBarClick,
-  setSearchMessage,
+  handleChangeSearchMessage,
   searchMessage,
 }) => {
   return (
     <div className="navigationBar">
-      <div
+      <Link
+        to="/"
         className="navigationBar label"
         onClick={() => handleNavBarClick("returnTop")}
       >
         <img className="navigationBar logo" src={logo} />{" "}
-      </div>
-      <div
+      </Link>
+      <Link
+        to="drivers"
         className="navigationBar label"
         onClick={() => handleNavBarClick("toggleDriverList")}
       >
         Drivers
-      </div>
-      <div className="navigationBar label">Teams</div>
-      <div className="navigationBar label">Standings</div>
+      </Link>
+      <Link to="/teams" className="navigationBar label">
+        Teams
+      </Link>
+      <Link to="/standings" className="navigationBar label">
+        Standings
+      </Link>
       <input
         className="navigationBar search"
         type="search"
         placeholder="Search for your driver!"
         value={searchMessage}
-        onChange={(e) => setSearchMessage(e.target.value)}
+        onChange={(e) => handleChangeSearchMessage(e)}
       ></input>
     </div>
   );

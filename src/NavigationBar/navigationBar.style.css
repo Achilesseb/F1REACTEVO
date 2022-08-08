@@ -6,6 +6,7 @@
   color: white;
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
 }
 .navigationBar.label {
   display: flex;

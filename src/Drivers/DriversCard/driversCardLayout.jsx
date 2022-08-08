@@ -2,9 +2,8 @@ import React from "react";
 import "./driversCardLayout.styles.css";
 import { useState } from "react";
 import { useEffect } from "react";
-const DriverCard = ({ data, id, handleClick }) => {
-  const driverData = data;
-  const driverRank = id + 1;
+const DriverCard = ({ driverData, driverId, handleChangeDriverPoints }) => {
+  const driverRank = driverId + 1;
   const [border, setBorderColor] = useState(false);
   const teamNameColor = driverData.team.toLowerCase().replaceAll(" ", "");
   return (
@@ -17,16 +16,28 @@ const DriverCard = ({ data, id, handleClick }) => {
       <div className="driverInfo">
         <div className="rank">{driverRank}</div>
         <div className="points">
-          {`${data.points}`} <span className="label">PTS</span>
+          {`${driverData.points}`} <span className="label">PTS</span>
         </div>
         <div className="buttons-container">
           <button
             className="button increase"
-            onClick={() => handleClick(data.points, data.number, "increase")}
+            onClick={() =>
+              handleChangeDriverPoints(
+                driverData.points,
+                driverData.number,
+                "increase"
+              )
+            }
           ></button>
           <button
             className="button decrease"
-            onClick={() => handleClick(data.points, data.number, "decrease")}
+            onClick={() =>
+              handleChangeDriverPoints(
+                driverData.points,
+                driverData.number,
+                "decrease"
+              )
+            }
           ></button>
         </div>
       </div>
